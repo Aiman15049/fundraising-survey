@@ -14,12 +14,20 @@
         <%= f.text_field :brid_of_sender, class: "form-control", autofocus: true %>
       </div>
       <div class="col-sm-8">
+            <%= f.label "Email of Colleague Sending:" %>
+        <%= f.text_field :email_of_sender, class: "form-control", autofocus: true %>
+      </div>
+      <div class="col-sm-8">
         <%= f.label "Name of Colleague receiving:" %>
         <%= f.text_field :name_of_receiver, class: "form-control", autofocus: true %>
       </div>
       <div class="col-sm-8">
         <%= f.label "BRID of Colleague Receiving:" %>
         <%= f.text_field :brid_of_receiver, class: "form-control", autofocus: true %>
+      </div>
+      <div class="col-sm-8">
+            <%= f.label "Email of Colleague Receiving:" %>
+        <%= f.text_field :email_of_sender, class: "form-control", autofocus: true %>
       </div>
       <div class="col-sm-8">
         <%= f.label "Receiving Colleague Floor number:" %>
