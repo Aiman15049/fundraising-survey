@@ -1,0 +1,39 @@
+<% if current_admin.email == "mjones0796@gmail.com" %>
+<body>
+<div style="width:100%;">
+<div style="padding: 0 40px;">
+
+<h1> Listing all Donations: <%= DonationForm.count %></h1>
+
+<table cellspacing="10" style="border: 1px solid #ececec; width: 100%; margin: 20px 0;">
+  <tr>
+    <th>Name of Colleague sending</th>
+    <th>BRID of Colleague Sending</th>
+    <th>Name of Colleague receiving</th>
+    <th>BRID of Colleague Receiving</th>
+    <th>Receiving Colleague Floor number:</th>
+    <th>Receiving Colleague Seat Number (approximate)</th>
+    <th>Number of Cupcakes</th>
+    <th>Flavor</th>
+    <th>Personal Message</th>
+  </tr>
+  <% @donation_forms.each do |donation_form| %>
+  <tr>
+    <td><%= donation_form.name_of_sender %></td>
+    <td><%= donation_form.brid_of_sender %></td>
+    <td><%= donation_form.name_of_receiver %></td>
+    <td><%= donation_form.brid_of_receiver %></td>
+    <td><%= donation_form.receiver_floor_number %></td>
+    <td><%= donation_form.receiver_seat_number %></td>
+    <td><%= donation_form.number_of_cakes %></td>
+    <td><%= donation_form.flavour %></td>
+    <td><%= donation_form.personal_message%></td>
+  </tr>
+
+  <% end %>
+  </table>
+  </div>
+</div>
+</body>
+  <% else %>
+  <% end %>

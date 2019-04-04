@@ -1,0 +1,61 @@
+<div class='row'>
+  <div class='col-xs-12'>
+    <%= form_for(@donation_form, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+    <div class="form-group">
+      <div class="control-label col-sm-2">
+
+      </div>
+      <div class="col-sm-8">
+          <%= f.label "Name of Colleague sending:" %>
+        <%= f.text_field :name_of_sender, class: "form-control", autofocus: true %>
+      </div>
+      <div class="col-sm-8">
+            <%= f.label "BRID of Colleague Sending:" %>
+        <%= f.text_field :brid_of_sender, class: "form-control", autofocus: true %>
+      </div>
+      <div class="col-sm-8">
+        <%= f.label "Name of Colleague receiving:" %>
+        <%= f.text_field :name_of_receiver, class: "form-control", autofocus: true %>
+      </div>
+      <div class="col-sm-8">
+        <%= f.label "BRID of Colleague Receiving:" %>
+        <%= f.text_field :brid_of_receiver, class: "form-control", autofocus: true %>
+      </div>
+      <div class="col-sm-8">
+        <%= f.label "Receiving Colleague Floor number:" %>
+        <%= f.text_field :receiver_floor_number, class: "form-control", autofocus: true %>
+      </div>
+      </br>
+      <div class="col-sm-8">
+        <%= f.label "Receiving Colleague Seat Number (approximate):" %>
+    <%= f.text_field :receiver_seat_number, class: "form-control", autofocus: true %>
+    </div>
+      </br>
+    <div class="col-sm-8">
+        <%= f.label "Number of Cupcakes:" %>
+      <%= f.text_field :number_of_cakes, class: "form-control", autofocus: true %>
+    </div>
+  </br>
+  </br>
+    <div class="col-sm-8">
+          <%= f.label "Flavour:" %>
+      <%= f.select :flavour, DonationForm::FLAVOURS %>
+    </div>
+  </div>
+    <div class="form-group">
+      <div class="control-label col-sm-2">
+
+      </div>
+      <div class="col-sm-8">
+        <%= f.label "Personal Message (Optional):" %>
+        <%= f.text_area :personal_message, rows: 10, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <%= f.submit "Submit", class: 'btn btn-primary btn-lg' %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

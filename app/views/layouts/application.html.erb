@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DonationPage</title>
+    <%= link_to "Admin Sign In", new_admin_session_path unless admin_signed_in? %>
+    </br>
+    <%= link_to "Sign Out", destroy_admin_session_path, method: :delete if admin_signed_in?  %>
+    </br>
+    <% if admin_signed_in? && current_admin.email == 'mjones0796@gmail.com' %>
+<%= link_to "Donations Index", donation_forms_path %>
+<% else %>
+<% end %>
+    </br>
+    <%= link_to "Donate", new_donation_form_path %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
